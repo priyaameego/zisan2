@@ -70,23 +70,17 @@ export const Navbar: React.FC = () => {
       className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
         isScrolled
           ? 'bg-white text-slate-900 shadow-[0_10px_35px_rgba(2,28,78,0.1)] border-b border-blue-50 py-3.5'
-          : 'bg-transparent text-white py-5 sm:py-6'
+          : 'bg-white/95 backdrop-blur-md text-slate-900 shadow-sm border-b border-slate-100 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* ZISANTECH Official Logo with ScoreLabs Styled Border Box Container */}
+        {/* ZISANTECH Official Logo */}
         <button
           onClick={() => scrollToSection('top')}
           className="flex items-center gap-3 group text-left cursor-pointer focus:outline-none"
           aria-label="ZisanTech Homepage"
         >
-          <div
-            className={`px-3 py-1.5 rounded-xl border transition-all duration-300 flex items-center gap-2.5 ${
-              isScrolled
-                ? 'bg-white border-blue-200/80 shadow-[0_4px_16px_rgba(0,102,255,0.08)]'
-                : 'bg-white/[0.08] backdrop-blur-md border-white/20 hover:border-white/40 shadow-lg'
-            }`}
-          >
+          <div className="px-3 py-1.5 rounded-xl border bg-white border-blue-100 shadow-[0_2px_10px_rgba(0,102,255,0.06)] hover:border-blue-200 transition-all duration-300 flex items-center gap-2.5">
             <img
               src="/zisantech_official_logo.png"
               alt="ZisanTech - INNOVATE • DEVELOP • GROW"
@@ -99,16 +93,12 @@ export const Navbar: React.FC = () => {
           </div>
         </button>
 
-        {/* Center Nav Links with Enhanced Readability & Font Sizes */}
+        {/* Center Nav Links - Simple, Clean, Crisp on White */}
         <nav className="hidden lg:flex items-center space-x-7 font-sans">
           {/* 1. Home */}
           <button
             onClick={() => scrollToSection('top')}
-            className={`text-[15px] font-semibold transition-colors cursor-pointer focus:outline-none ${
-              isScrolled
-                ? 'text-slate-800 hover:text-[#0066FF]'
-                : 'text-white hover:text-[#38BDF8]'
-            }`}
+            className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] transition-colors cursor-pointer focus:outline-none"
           >
             Home
           </button>
@@ -121,73 +111,35 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('about')}
-              className={`text-[15px] font-semibold flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none ${
-                isScrolled
-                  ? 'text-slate-800 hover:text-[#0066FF]'
-                  : 'text-white hover:text-[#38BDF8]'
-              }`}
+              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>About Us</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'about' ? 'rotate-180 text-[#0066FF]' : isScrolled ? 'text-slate-500' : 'text-slate-300'
+                  activeDropdown === 'about' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
                 }`}
               />
             </button>
 
-            {/* ScoreLabs Clean Crisp Dropdown */}
+            {/* Simple Clean Rounded Dropdown Menu */}
             {activeDropdown === 'about' && (
               <div
-                className="absolute left-0 top-full pt-3 z-50 w-[400px]"
+                className="absolute left-0 top-full pt-2 z-50 w-64"
                 onMouseEnter={() => handleMouseEnter('about')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-[0_25px_60px_rgba(2,28,78,0.14)] space-y-3.5 animate-fade-in text-slate-800">
-                  <div className="border-b border-slate-100 pb-3">
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#0066FF] font-bold">
-                      About ZisanTech
-                    </span>
-                    <h4 className="text-base font-bold text-slate-900 mt-0.5 font-heading">
-                      ZisanTech Solutions
-                    </h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                      Transforming businesses through intelligent SAP solutions, enterprise integration, and strategic technology consulting.
-                    </p>
+                <div className="bg-white border border-slate-100 rounded-2xl py-3 px-2 shadow-[0_15px_35px_rgba(0,0,0,0.1)] animate-fade-in text-slate-800 space-y-1">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Leadership &amp; Architects
                   </div>
-
-                  <div className="space-y-2">
-                    <div className="p-3 rounded-xl hover:bg-blue-50/60 border border-transparent hover:border-blue-100 select-none cursor-default transition-all">
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-[#0066FF]" />
-                        <span className="text-sm font-bold text-slate-900">Leadership &amp; Architects</span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-0.5">Certified enterprise SAP consultants with hands-on project mastery.</p>
-                    </div>
-
-                    <div className="p-3 rounded-xl hover:bg-blue-50/60 border border-transparent hover:border-blue-100 select-none cursor-default transition-all">
-                      <div className="flex items-center gap-2">
-                        <Compass className="w-4 h-4 text-[#0066FF]" />
-                        <span className="text-sm font-bold text-slate-900">Vision &amp; Strategic Heritage</span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-0.5">10+ years driving operational efficiency and process excellence.</p>
-                    </div>
-
-                    <div className="p-3 rounded-xl hover:bg-blue-50/60 border border-transparent hover:border-blue-100 select-none cursor-default transition-all">
-                      <div className="flex items-center gap-2">
-                        <Briefcase className="w-4 h-4 text-[#0066FF]" />
-                        <span className="text-sm font-bold text-slate-900">Global Standards</span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-0.5">24/7 dedicated enterprise SLA support and statutory tax governance.</p>
-                    </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Vision &amp; Strategic Heritage
                   </div>
-
-                  <div className="pt-2 border-t border-slate-100 flex justify-end">
-                    <button
-                      onClick={() => scrollToSection('about')}
-                      className="text-xs font-bold text-[#0066FF] hover:underline flex items-center gap-1 cursor-pointer"
-                    >
-                      View on homepage <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Global Standards &amp; SLA
+                  </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Our Core Values
                   </div>
                 </div>
               </div>
@@ -202,70 +154,32 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('services')}
-              className={`text-[15px] font-semibold flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none ${
-                isScrolled
-                  ? 'text-slate-800 hover:text-[#0066FF]'
-                  : 'text-white hover:text-[#38BDF8]'
-              }`}
+              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>Our Services</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'services' ? 'rotate-180 text-[#0066FF]' : isScrolled ? 'text-slate-500' : 'text-slate-300'
+                  activeDropdown === 'services' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
                 }`}
               />
             </button>
 
-            {/* Services Mega Dropdown */}
+            {/* Simple Clean Rounded Dropdown Menu */}
             {activeDropdown === 'services' && (
               <div
-                className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50 w-[740px]"
+                className="absolute left-0 top-full pt-2 z-50 w-64"
                 onMouseEnter={() => handleMouseEnter('services')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-[0_25px_60px_rgba(2,28,78,0.14)] grid grid-cols-2 gap-6 animate-fade-in text-slate-800">
-                  <div>
-                    <h5 className="text-[11px] font-mono uppercase tracking-widest text-[#0066FF] font-bold pb-2 border-b border-slate-100 mb-3 flex items-center gap-2">
-                      <Cpu className="w-4 h-4" /> SAP Enterprise Practices
-                    </h5>
-                    <ul className="space-y-2">
-                      {SERVICES.filter(s => s.category.includes('SAP')).map((s) => (
-                        <li
-                          key={s.id}
-                          className="p-2.5 rounded-xl hover:bg-blue-50/60 border border-transparent hover:border-blue-100 select-none cursor-default transition-all"
-                        >
-                          <p className="text-xs sm:text-sm font-bold text-slate-900">{s.title}</p>
-                          <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{s.shortDesc}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h5 className="text-[11px] font-mono uppercase tracking-widest text-[#0066FF] font-bold pb-2 border-b border-slate-100 mb-3 flex items-center gap-2">
-                      <Layers className="w-4 h-4" /> IT &amp; Digital Solutions
-                    </h5>
-                    <ul className="space-y-2">
-                      {SERVICES.filter(s => !s.category.includes('SAP')).map((s) => (
-                        <li
-                          key={s.id}
-                          className="p-2.5 rounded-xl hover:bg-blue-50/60 border border-transparent hover:border-blue-100 select-none cursor-default transition-all"
-                        >
-                          <p className="text-xs sm:text-sm font-bold text-slate-900">{s.title}</p>
-                          <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{s.shortDesc}</p>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                      <button
-                        onClick={() => scrollToSection('services')}
-                        className="text-xs font-bold text-[#0066FF] hover:underline flex items-center gap-1 cursor-pointer"
-                      >
-                        Explore all solutions on page <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
+                <div className="bg-white border border-slate-100 rounded-2xl py-3 px-2 shadow-[0_15px_35px_rgba(0,0,0,0.1)] animate-fade-in text-slate-800 space-y-1">
+                  {SERVICES.map((s) => (
+                    <div
+                      key={s.id}
+                      className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors truncate"
+                    >
+                      {s.title}
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -279,58 +193,32 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('industries')}
-              className={`text-[15px] font-semibold flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none ${
-                isScrolled
-                  ? 'text-slate-800 hover:text-[#0066FF]'
-                  : 'text-white hover:text-[#38BDF8]'
-              }`}
+              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>Industries</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'industries' ? 'rotate-180 text-[#0066FF]' : isScrolled ? 'text-slate-500' : 'text-slate-300'
+                  activeDropdown === 'industries' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
                 }`}
               />
             </button>
 
-            {/* Industries Mega Dropdown */}
+            {/* Simple Clean Rounded Dropdown Menu */}
             {activeDropdown === 'industries' && (
               <div
-                className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50 w-[660px]"
+                className="absolute left-0 top-full pt-2 z-50 w-64"
                 onMouseEnter={() => handleMouseEnter('industries')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-[0_25px_60px_rgba(2,28,78,0.14)] animate-fade-in text-slate-800">
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#0066FF] font-bold">
-                      Enterprise Verticals (6 Core)
-                    </span>
-                    <span className="text-xs font-mono text-slate-500">Tailored SAP Solutions</span>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3.5">
-                    {INDUSTRIES.map((ind) => (
-                      <div
-                        key={ind.id}
-                        className="p-3.5 rounded-xl hover:bg-blue-50/60 border border-slate-100 hover:border-blue-200 select-none cursor-default transition-all"
-                      >
-                        <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#0066FF]"></span>
-                          {ind.name}
-                        </p>
-                        <p className="text-xs text-slate-500 line-clamp-1 mt-1">{ind.tagline}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                    <button
-                      onClick={() => scrollToSection('industries')}
-                      className="text-xs font-bold text-[#0066FF] hover:underline flex items-center gap-1 cursor-pointer"
+                <div className="bg-white border border-slate-100 rounded-2xl py-3 px-2 shadow-[0_15px_35px_rgba(0,0,0,0.1)] animate-fade-in text-slate-800 space-y-1">
+                  {INDUSTRIES.map((ind) => (
+                    <div
+                      key={ind.id}
+                      className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors truncate"
                     >
-                      View 6 industry cards <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
+                      {ind.name}
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -344,54 +232,41 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('training')}
-              className={`text-[15px] font-semibold flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none ${
-                isScrolled
-                  ? 'text-slate-800 hover:text-[#0066FF]'
-                  : 'text-white hover:text-[#38BDF8]'
-              }`}
+              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>SAP Training</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'training' ? 'rotate-180 text-[#0066FF]' : isScrolled ? 'text-slate-500' : 'text-slate-300'
+                  activeDropdown === 'training' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
                 }`}
               />
             </button>
 
-            {/* Training Mega Dropdown */}
+            {/* Simple Clean Rounded Dropdown Menu */}
             {activeDropdown === 'training' && (
               <div
-                className="absolute right-0 top-full pt-3 z-50 w-[660px]"
+                className="absolute left-0 top-full pt-2 z-50 w-64"
                 onMouseEnter={() => handleMouseEnter('training')}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-[0_25px_60px_rgba(2,28,78,0.14)] grid grid-cols-2 gap-6 animate-fade-in text-slate-800">
-                  <div>
-                    <h5 className="text-[11px] font-mono uppercase tracking-widest text-[#0066FF] font-bold pb-2 border-b border-slate-100 mb-3 flex items-center gap-2">
-                      <GraduationCap className="w-4 h-4" /> Functional Modules
-                    </h5>
-                    <div className="grid grid-cols-2 gap-2 max-h-[230px] overflow-y-auto pr-1">
-                      {TRAINING_MODULES.filter(t => t.type === 'functional').map(t => (
-                        <div key={t.id} className="p-2 rounded-lg hover:bg-blue-50/60 select-none cursor-default border border-slate-100 transition-colors">
-                          <span className="text-[11px] font-mono font-bold text-[#0066FF] block">{t.code}</span>
-                          <span className="text-xs font-medium text-slate-800 truncate block mt-0.5">{t.title.split(' (')[0]}</span>
-                        </div>
-                      ))}
-                    </div>
+                <div className="bg-white border border-slate-100 rounded-2xl py-3 px-2 shadow-[0_15px_35px_rgba(0,0,0,0.1)] animate-fade-in text-slate-800 space-y-1">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    SAP S/4HANA Finance (FICO)
                   </div>
-
-                  <div>
-                    <h5 className="text-[11px] font-mono uppercase tracking-widest text-[#0066FF] font-bold pb-2 border-b border-slate-100 mb-3 flex items-center gap-2">
-                      <Cpu className="w-4 h-4" /> Technical Modules
-                    </h5>
-                    <div className="space-y-2">
-                      {TRAINING_MODULES.filter(t => t.type === 'technical').map(t => (
-                        <div key={t.id} className="p-2 rounded-lg hover:bg-blue-50/60 select-none cursor-default border border-slate-100 transition-colors">
-                          <span className="text-[11px] font-mono font-bold text-[#0066FF] block">{t.code}</span>
-                          <span className="text-xs font-medium text-slate-800 block mt-0.5">{t.title}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Materials Management (MM)
+                  </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Sales &amp; Distribution (SD)
+                  </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Production Planning (PP)
+                  </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    Quality Management (QM)
+                  </div>
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                    ABAP &amp; Technical Core
                   </div>
                 </div>
               </div>
@@ -401,11 +276,7 @@ export const Navbar: React.FC = () => {
           {/* 6. Contact Us */}
           <button
             onClick={() => scrollToSection('contact-cta')}
-            className={`text-[15px] font-semibold transition-colors cursor-pointer focus:outline-none ${
-              isScrolled
-                ? 'text-slate-800 hover:text-[#0066FF]'
-                : 'text-white hover:text-[#38BDF8]'
-            }`}
+            className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] transition-colors cursor-pointer focus:outline-none"
           >
             Contact Us
           </button>
@@ -415,7 +286,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden lg:flex items-center">
           <button
             onClick={() => scrollToSection('contact-cta')}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#0052cc] to-[#0066FF] hover:from-[#0066FF] hover:to-[#2563EB] text-white text-sm font-bold transition-all duration-300 shadow-[0_4px_18px_rgba(0,102,255,0.35)] hover:shadow-[0_8px_25px_rgba(0,102,255,0.5)] flex items-center gap-2.5 cursor-pointer focus:outline-none active:scale-95"
+            className="px-6 py-2.5 rounded-xl bg-[#174EA6] hover:bg-[#102B59] text-white text-sm font-bold transition-all duration-300 shadow-[0_4px_18px_rgba(23,78,166,0.25)] hover:shadow-[0_8px_25px_rgba(23,78,166,0.4)] flex items-center gap-2 cursor-pointer focus:outline-none active:scale-95"
           >
             <span>Get Consultation</span>
             <ArrowRight className="w-4 h-4" />
@@ -426,17 +297,13 @@ export const Navbar: React.FC = () => {
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => scrollToSection('contact-cta')}
-            className="px-3.5 py-1.5 rounded-lg bg-[#0066FF] text-white text-xs font-semibold shadow-md"
+            className="px-3.5 py-1.5 rounded-lg bg-[#174EA6] text-white text-xs font-semibold shadow-md"
           >
             Consultation
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-lg border focus:outline-none ${
-              isScrolled
-                ? 'bg-slate-100 border-slate-200 text-slate-800'
-                : 'bg-white/10 border-white/20 text-white'
-            }`}
+            className="p-2 rounded-lg border bg-slate-50 border-slate-200 text-slate-800 focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

@@ -26,7 +26,12 @@ import {
   MessageSquare,
   Award,
   Database,
-  Server
+  Server,
+  HelpCircle,
+  Quote,
+  Star,
+  Plus,
+  Minus
 } from 'lucide-react';
 import {
   COMPANY_INFO,
@@ -44,6 +49,81 @@ export const ConceptEnterprise: React.FC = () => {
     message: ''
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+
+  // Authentic industrial high-contrast imagery mapping
+  const industryPhotos: Record<string, string> = {
+    'manufacturing': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
+    'retail-textile': 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=85',
+    'oil-gas': 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
+    'agro-chemical': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=85',
+    'steel': 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85',
+    'pharma': 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=85'
+  };
+
+  // Verified Client Testimonials from zisantech.com
+  const clientReviews = [
+    {
+      name: 'Rahul Sharma',
+      role: 'IT Manager',
+      review: 'ZisanTech Solutions delivered exceptional SAP consulting services. Their team aligned our ERP roadmap flawlessly with corporate tax mandates.',
+      rating: 5
+    },
+    {
+      name: 'Amit Singh',
+      role: 'Operations Head',
+      review: 'Reliable IT partner with scalable enterprise solutions. The shop-floor to top-floor weighbridge integration cut dispatch delays significantly.',
+      rating: 5
+    },
+    {
+      name: 'Anjali Verma',
+      role: 'SAP Consultant',
+      review: 'Their training program exceeded expectations with practical sessions and direct live sandbox access. Prepared our team for real projects.',
+      rating: 5
+    },
+    {
+      name: 'Priya Mehta',
+      role: 'HR Manager',
+      review: 'The custom HRMS and payroll workflow simplified employee lifecycle management and regulatory tax deductions completely.',
+      rating: 5
+    },
+    {
+      name: 'Vikram Patel',
+      role: 'Business Analyst',
+      review: 'Improved reporting and analytics significantly. We now have real-time financial ledgers and seamless inventory visibility.',
+      rating: 5
+    },
+    {
+      name: 'Neha Kapoor',
+      role: 'Marketing Lead',
+      review: 'Digital transformation boosted our distributor engagement and online operations across multiple regional channels.',
+      rating: 5
+    }
+  ];
+
+  // Verified FAQ content from zisantech.com
+  const faqList = [
+    {
+      q: 'What SAP & Enterprise Services do you offer?',
+      a: 'We provide end-to-end SAP services including SAP Rollout, Custom Solutions, 24/7 SLA Support & Hyper-care, System Integration (Weighbridge, Gate Management, Banks), SAP E-Invoice & E-Way Bill statutory bridges, CRM/ERP solutions, and career-oriented SAP training.'
+    },
+    {
+      q: 'How can ZisanTech help improve our business operations?',
+      a: 'We analyze your workflows and eliminate inefficiencies first. Our architects design streamlined, standardized processes on SAP S/4HANA that boost productivity, automate fiscal compliance, and reduce operational friction.'
+    },
+    {
+      q: 'What experience do you have across our industry?',
+      a: 'We have 10+ years of domain-specific delivery across 6 core sectors: Discrete & Process Manufacturing, Retail & Textile, Oil & Gas, Agro Chemical, Steel & Metallurgy, and Pharma & Life Sciences.'
+    },
+    {
+      q: 'What is your project implementation methodology?',
+      a: 'We follow our proven 4-stage lifecycle: Discover (Audit & Scoping) → Strategize (Architecture & Roadmap) → Implement (Configuration, Migration & Integration) → Optimize (24/7 Hyper-care & Continuous Evolution).'
+    },
+    {
+      q: 'How does ZisanTech manage post-go-live support?',
+      a: 'Our Tier-1 to Tier-3 support engineers operate on strict SLAs. We ensure continuous monitoring, statutory updates (GST/E-way bill patches), regular health checks, and rapid ticket resolution.'
+    }
+  ];
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -412,71 +492,75 @@ export const ConceptEnterprise: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {INDUSTRIES.map((industry, index) => (
-              <motion.div
-                key={industry.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group relative h-[450px] rounded-3xl overflow-hidden border border-blue-900/60 hover:border-[#0066FF] transition-all duration-500 shadow-2xl hover:shadow-[0_25px_60px_rgba(0,102,255,0.4)] flex flex-col justify-end"
-              >
-                {/* Cinematic Image with Smooth 3D Hover Scale */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <img
-                    src={industry.image}
-                    alt={industry.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-112 transition-transform duration-700 filter brightness-80 contrast-115 group-hover:brightness-95"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/70 to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent"></div>
-                </div>
+            {INDUSTRIES.map((industry, index) => {
+              const bgImg = industryPhotos[industry.id] || industry.image;
+              return (
+                <motion.div
+                  key={industry.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className="group relative h-[470px] rounded-3xl overflow-hidden border border-blue-900/60 hover:border-[#20B8E8] transition-all duration-500 shadow-2xl hover:shadow-[0_25px_60px_rgba(32,184,232,0.3)] flex flex-col justify-end"
+                >
+                  {/* Cinematic Image with Smooth 3D Hover Scale */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <img
+                      src={bgImg}
+                      alt={industry.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter brightness-75 contrast-110 group-hover:brightness-90"
+                    />
+                    {/* Dark gradient vignette for crystal clear readable text */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#091A38] via-[#091A38]/90 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
+                  </div>
 
-                <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-10">
-                  <span className="w-9 h-9 rounded-full bg-black/70 border border-white/20 backdrop-blur-md text-xs font-mono font-bold text-white flex items-center justify-center">
-                    0{index + 1}
-                  </span>
-                  <span className="px-3.5 py-1 rounded-full bg-blue-600/40 border border-blue-400/40 backdrop-blur-md text-xs font-mono text-[#38BDF8] uppercase tracking-wider font-bold shadow-md">
-                    Core Vertical
-                  </span>
-                </div>
+                  <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-10">
+                    <span className="w-9 h-9 rounded-full bg-[#102B59]/80 border border-[#20B8E8]/40 backdrop-blur-md text-xs font-mono font-bold text-white flex items-center justify-center shadow-lg">
+                      0{index + 1}
+                    </span>
+                    <span className="px-3.5 py-1 rounded-full bg-[#174EA6]/80 border border-[#20B8E8]/50 backdrop-blur-md text-xs font-mono text-[#8FE3FB] uppercase tracking-wider font-bold shadow-md">
+                      Core Vertical
+                    </span>
+                  </div>
 
-                <div className="relative z-10 p-7 space-y-3.5">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#38BDF8] transition-colors font-heading drop-shadow-md">
-                    {industry.name}
-                  </h3>
-                  <p className="text-xs font-mono uppercase tracking-wider text-[#38BDF8] font-bold">
-                    {industry.tagline}
-                  </p>
-                  <p className="text-sm text-slate-200 leading-relaxed line-clamp-2">
-                    {industry.summary}
-                  </p>
+                  <div className="relative z-10 p-7 space-y-3.5">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#20B8E8] transition-colors font-heading drop-shadow-md">
+                      {industry.name}
+                    </h3>
+                    <p className="text-xs font-mono uppercase tracking-wider text-[#8FE3FB] font-bold">
+                      {industry.tagline}
+                    </p>
+                    <p className="text-sm text-slate-100 leading-relaxed line-clamp-3">
+                      {industry.summary}
+                    </p>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {industry.modules.slice(0, 3).map((mod, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-white/15 text-white border border-white/20 backdrop-blur-md"
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {industry.modules.slice(0, 3).map((mod, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-white/10 text-blue-100 border border-white/20 backdrop-blur-md"
+                        >
+                          {mod}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="pt-3 border-t border-white/15 flex items-center justify-between">
+                      <span className="text-xs text-slate-300">Tailored Enterprise Architecture</span>
+                      <button
+                        onClick={() => scrollToSection('contact-cta')}
+                        className="w-10 h-10 rounded-full bg-[#174EA6] hover:bg-[#20B8E8] hover:text-[#102B59] hover:scale-110 text-white flex items-center justify-center shadow-lg shadow-blue-900/50 transition-all cursor-pointer border border-[#20B8E8]/40"
+                        aria-label={`Explore ${industry.name} solutions`}
                       >
-                        {mod}
-                      </span>
-                    ))}
+                        <ArrowUpRight className="w-5 h-5" />
+                      </button>
+                    </div>
                   </div>
-
-                  <div className="pt-3 border-t border-white/20 flex items-center justify-between">
-                    <span className="text-xs text-slate-300">Tailored Enterprise Architecture</span>
-                    <button
-                      onClick={() => scrollToSection('contact-cta')}
-                      className="w-10 h-10 rounded-full bg-gradient-to-r from-[#0052cc] to-[#0066FF] hover:scale-110 text-white flex items-center justify-center shadow-lg shadow-blue-600/35 transition-all cursor-pointer"
-                      aria-label={`Explore ${industry.name} solutions`}
-                    >
-                      <ArrowUpRight className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -818,16 +902,131 @@ export const ConceptEnterprise: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SECTION 8 – CONTACT CTA (3D Lead Generation Consultation Form)
-          Background: Deep Electric Cobalt [#040E2C]
+          SECTION 8 – VERIFIED CLIENT REVIEWS ("REVIEWS OF EXPERTS" FROM ZISANTECH.COM)
+          Background: Crisp White with Royal Blue Quotes & High-End Card Layout
       ========================================================================= */}
-      <section id="contact-cta" className="py-28 relative bg-[#040E2C]">
+      <section id="reviews" className="py-28 relative bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-100/70 border border-blue-200">
+              <Quote className="w-4 h-4 text-[#174EA6]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#102B59] font-bold">
+                Client Testimonials
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#102B59] tracking-tight font-heading">
+              Reviews Of Enterprise Leaders.
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-light">
+              Trusted by IT directors, operations heads, and enterprise teams across manufacturing, supply chain, and retail.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {clientReviews.map((rev, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="p-7 rounded-2xl bg-[#F4F8FF] border border-blue-100 hover:border-[#174EA6] transition-all shadow-sm hover:shadow-[0_15px_35px_rgba(23,78,166,0.12)] flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1 text-amber-500">
+                      {[...Array(rev.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <Quote className="w-6 h-6 text-blue-300" />
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    &ldquo;{rev.review}&rdquo;
+                  </p>
+                </div>
+
+                <div className="pt-5 mt-4 border-t border-blue-100 flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-full bg-[#174EA6] text-white flex items-center justify-center font-bold text-sm shadow-md">
+                    {rev.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-[#102B59]">{rev.name}</h4>
+                    <p className="text-xs text-[#174EA6] font-semibold">{rev.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 9 – FREQUENTLY ASKED QUESTIONS ("MOST ASKED QUESTION TO US" FROM ZISANTECH.COM)
+          Background: Light Blue (#F4F8FF) with Interactive Accordion
+      ========================================================================= */}
+      <section id="faq" className="py-28 relative bg-[#F4F8FF] border-t border-blue-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-100 border border-blue-200">
+              <HelpCircle className="w-4 h-4 text-[#174EA6]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#102B59] font-bold">
+                Clear Answers
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#102B59] tracking-tight font-heading">
+              Most Asked Questions.
+            </h2>
+            <p className="text-base text-slate-600 leading-relaxed font-light">
+              Everything you need to know about partnering with ZisanTech for SAP and enterprise technology services.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqList.map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white border border-blue-100 overflow-hidden shadow-sm transition-all"
+                >
+                  <button
+                    onClick={() => setActiveFaq(isOpen ? null : idx)}
+                    className="w-full text-left p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  >
+                    <span className="text-base sm:text-lg font-bold text-[#102B59]">
+                      {faq.q}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-[#F4F8FF] border border-blue-100 flex items-center justify-center flex-shrink-0 text-[#174EA6]">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      transition={{ duration: 0.3 }}
+                      className="px-6 pb-6 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-50"
+                    >
+                      {faq.a}
+                    </motion.div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 10 – CONTACT CTA: Rich Royal Blue Gradient (#102B59 to #174EA6)
+      ========================================================================= */}
+      <section id="contact-cta" className="py-28 relative bg-gradient-to-br from-[#102B59] via-[#143B77] to-[#174EA6] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#20B8E8]/40">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#20B8E8] shadow-[0_0_8px_#20B8E8]"></span>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#20B8E8] font-bold">
                   Initiate Engagement
                 </span>
               </div>
@@ -836,25 +1035,25 @@ export const ConceptEnterprise: React.FC = () => {
                 Ready To Transform Your Enterprise Systems?
               </h2>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-blue-100 leading-relaxed font-light">
                 Consult with our senior SAP architects and enterprise technology advisors. We provide comprehensive technical evaluations, scoping roadmaps, and dedicated delivery governance.
               </p>
 
               <div className="space-y-4 pt-2">
                 <motion.div
                   whileHover={{ x: 6 }}
-                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-blue-900/50 hover:border-[#0066FF] transition-all flex items-center gap-4 shadow-lg"
+                  className="p-4 sm:p-5 rounded-2xl bg-white/10 border border-white/20 hover:border-[#20B8E8] transition-all flex items-center gap-4 shadow-lg backdrop-blur-md"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-blue-500/30">
-                    <Phone className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-xl bg-[#174EA6] border border-[#20B8E8]/40 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+                    <Phone className="w-6 h-6 text-[#20B8E8]" />
                   </div>
                   <div>
-                    <p className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold">
+                    <p className="text-xs font-mono uppercase tracking-widest text-blue-200 font-bold">
                       Telephone Hotline
                     </p>
                     <a
                       href={`tel:${COMPANY_INFO.primaryPhone}`}
-                      className="text-base sm:text-lg font-bold text-white hover:text-[#38BDF8] transition-colors"
+                      className="text-base sm:text-lg font-bold text-white hover:text-[#20B8E8] transition-colors"
                     >
                       {COMPANY_INFO.primaryPhone}
                     </a>
@@ -863,18 +1062,18 @@ export const ConceptEnterprise: React.FC = () => {
 
                 <motion.div
                   whileHover={{ x: 6 }}
-                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-blue-900/50 hover:border-[#0066FF] transition-all flex items-center gap-4 shadow-lg"
+                  className="p-4 sm:p-5 rounded-2xl bg-white/10 border border-white/20 hover:border-[#20B8E8] transition-all flex items-center gap-4 shadow-lg backdrop-blur-md"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-blue-500/30">
-                    <Send className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-xl bg-[#174EA6] border border-[#20B8E8]/40 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+                    <Send className="w-6 h-6 text-[#20B8E8]" />
                   </div>
                   <div>
-                    <p className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold">
+                    <p className="text-xs font-mono uppercase tracking-widest text-blue-200 font-bold">
                       Direct Email Inquiry
                     </p>
                     <a
                       href={`mailto:${COMPANY_INFO.primaryEmail}`}
-                      className="text-base sm:text-lg font-bold text-white hover:text-[#38BDF8] transition-colors"
+                      className="text-base sm:text-lg font-bold text-white hover:text-[#20B8E8] transition-colors"
                     >
                       {COMPANY_INFO.primaryEmail}
                     </a>
@@ -886,20 +1085,20 @@ export const ConceptEnterprise: React.FC = () => {
             <div className="lg:col-span-7">
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#081B4B] to-[#020B1E] border border-blue-400/30 shadow-[0_25px_60px_rgba(0,102,255,0.25)]"
+                className="p-8 sm:p-10 rounded-3xl bg-white border border-blue-100 shadow-[0_25px_60px_rgba(16,43,89,0.25)] text-slate-800"
               >
-                <h3 className="text-2xl font-bold text-white font-heading">
+                <h3 className="text-2xl font-bold text-[#102B59] font-heading">
                   Request an Architecture Consultation
                 </h3>
-                <p className="text-sm text-slate-300 mt-1 mb-6">
+                <p className="text-sm text-slate-500 mt-1 mb-6">
                   Submit your enterprise requirement. A senior technical director will respond within 24 hours.
                 </p>
 
                 {formSubmitted ? (
-                  <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3">
-                    <CheckCircle className="w-10 h-10 text-emerald-400 mx-auto" />
-                    <h4 className="text-lg font-bold text-white">Inquiry Received</h4>
-                    <p className="text-sm text-slate-200">
+                  <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
+                    <CheckCircle className="w-10 h-10 text-emerald-600 mx-auto" />
+                    <h4 className="text-lg font-bold text-slate-900">Inquiry Received</h4>
+                    <p className="text-sm text-slate-600">
                       Thank you for contacting ZisanTech Solutions. Our enterprise consulting board has received your details and will connect promptly.
                     </p>
                   </div>
@@ -907,7 +1106,7 @@ export const ConceptEnterprise: React.FC = () => {
                   <form onSubmit={handleFormSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5 font-bold">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-1.5 font-bold">
                           Full Name *
                         </label>
                         <input
@@ -916,11 +1115,11 @@ export const ConceptEnterprise: React.FC = () => {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="e.g. Rahul Sharma"
-                          className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-blue-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#0066FF] transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#F4F8FF] border border-blue-100 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#174EA6] transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5 font-bold">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-1.5 font-bold">
                           Corporate Email *
                         </label>
                         <input
@@ -929,14 +1128,14 @@ export const ConceptEnterprise: React.FC = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="name@enterprise.com"
-                          className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-blue-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#0066FF] transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#F4F8FF] border border-blue-100 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#174EA6] transition-colors"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5 font-bold">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-1.5 font-bold">
                           Phone Number
                         </label>
                         <input
@@ -944,17 +1143,17 @@ export const ConceptEnterprise: React.FC = () => {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+91 98765 43210"
-                          className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-blue-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#0066FF] transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#F4F8FF] border border-blue-100 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#174EA6] transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5 font-bold">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-1.5 font-bold">
                           Area of Interest
                         </label>
                         <select
                           value={formData.service}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full px-4 py-3.5 rounded-xl bg-[#040D26] border border-blue-900/50 text-white text-sm focus:outline-none focus:border-[#0066FF] transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#F4F8FF] border border-blue-100 text-slate-900 text-sm focus:outline-none focus:border-[#174EA6] transition-colors"
                         >
                           <option value="SAP Consulting">SAP Consulting &amp; Advisory</option>
                           <option value="SAP S/4HANA Rollout">SAP Rollout &amp; Implementation</option>
@@ -966,7 +1165,7 @@ export const ConceptEnterprise: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5 font-bold">
+                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-600 mb-1.5 font-bold">
                         Project Scope or Message
                       </label>
                       <textarea
@@ -975,15 +1174,15 @@ export const ConceptEnterprise: React.FC = () => {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Briefly describe your systems environment, requirements or timeline..."
-                        className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-blue-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#0066FF] transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#F4F8FF] border border-blue-100 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#174EA6] transition-colors"
                       ></textarea>
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#0052cc] to-[#0066FF] hover:from-[#0066FF] hover:to-[#2563EB] text-white text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-500/35 active:scale-95 hover:shadow-[0_10px_30px_rgba(0,102,255,0.6)]"
+                      className="w-full py-4 rounded-xl bg-[#174EA6] hover:bg-[#102B59] text-white text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-900/30 active:scale-95 hover:shadow-[0_10px_30px_rgba(32,184,232,0.35)] border border-[#20B8E8]/40"
                     >
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 text-[#20B8E8]" />
                       <span>Submit Consultation Request</span>
                     </button>
                   </form>
