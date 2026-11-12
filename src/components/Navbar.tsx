@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
           {/* 1. Home */}
           <button
             onClick={() => scrollToSection('top')}
-            className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] transition-colors cursor-pointer focus:outline-none"
+            className="text-[15px] font-semibold text-[#171B40] hover:text-[#36BCE5] transition-colors cursor-pointer focus:outline-none"
           >
             Home
           </button>
@@ -111,12 +111,12 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('about')}
-              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
+              className="text-[15px] font-semibold text-[#171B40] hover:text-[#36BCE5] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>About Us</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'about' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
+                  activeDropdown === 'about' ? 'rotate-180 text-[#36BCE5]' : 'text-slate-500'
                 }`}
               />
             </button>
@@ -129,16 +129,16 @@ export const Navbar: React.FC = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="bg-white border border-slate-100 rounded-2xl py-3 px-2 shadow-[0_15px_35px_rgba(0,0,0,0.1)] animate-fade-in text-slate-800 space-y-1">
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Leadership &amp; Architects
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Vision &amp; Strategic Heritage
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Global Standards &amp; SLA
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Our Core Values
                   </div>
                 </div>
@@ -154,12 +154,12 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('services')}
-              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
+              className="text-[15px] font-semibold text-[#171B40] hover:text-[#36BCE5] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>Our Services</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'services' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
+                  activeDropdown === 'services' ? 'rotate-180 text-[#36BCE5]' : 'text-slate-500'
                 }`}
               />
             </button>
@@ -175,7 +175,7 @@ export const Navbar: React.FC = () => {
                   {SERVICES.map((s) => (
                     <div
                       key={s.id}
-                      className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors truncate"
+                      className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors truncate"
                     >
                       {s.title}
                     </div>
@@ -193,12 +193,12 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('industries')}
-              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
+              className="text-[15px] font-semibold text-[#171B40] hover:text-[#36BCE5] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>Industries</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'industries' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
+                  activeDropdown === 'industries' ? 'rotate-180 text-[#36BCE5]' : 'text-slate-500'
                 }`}
               />
             </button>
@@ -214,7 +214,7 @@ export const Navbar: React.FC = () => {
                   {INDUSTRIES.map((ind) => (
                     <div
                       key={ind.id}
-                      className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors truncate"
+                      className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors truncate"
                     >
                       {ind.name}
                     </div>
@@ -232,12 +232,12 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => toggleDropdown('training')}
-              className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
+              className="text-[15px] font-semibold text-[#171B40] hover:text-[#36BCE5] flex items-center gap-1.5 transition-colors cursor-pointer py-1 focus:outline-none"
             >
               <span>SAP Training</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'training' ? 'rotate-180 text-[#174EA6]' : 'text-slate-500'
+                  activeDropdown === 'training' ? 'rotate-180 text-[#36BCE5]' : 'text-slate-500'
                 }`}
               />
             </button>
@@ -250,22 +250,22 @@ export const Navbar: React.FC = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="bg-white border border-slate-100 rounded-2xl py-3 px-2 shadow-[0_15px_35px_rgba(0,0,0,0.1)] animate-fade-in text-slate-800 space-y-1">
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     SAP S/4HANA Finance (FICO)
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Materials Management (MM)
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Sales &amp; Distribution (SD)
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Production Planning (PP)
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     Quality Management (QM)
                   </div>
-                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#174EA6] transition-colors">
+                  <div className="px-4 py-2.5 rounded-xl hover:bg-slate-50 select-none cursor-default text-sm font-semibold text-slate-700 hover:text-[#36BCE5] transition-colors">
                     ABAP &amp; Technical Core
                   </div>
                 </div>
@@ -276,7 +276,7 @@ export const Navbar: React.FC = () => {
           {/* 6. Contact Us */}
           <button
             onClick={() => scrollToSection('contact-cta')}
-            className="text-[15px] font-semibold text-slate-800 hover:text-[#174EA6] transition-colors cursor-pointer focus:outline-none"
+            className="text-[15px] font-semibold text-[#171B40] hover:text-[#36BCE5] transition-colors cursor-pointer focus:outline-none"
           >
             Contact Us
           </button>
@@ -286,8 +286,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden lg:flex items-center">
           <button
             onClick={() => scrollToSection('contact-cta')}
-            className="px-6 py-2.5 rounded-xl bg-[#174EA6] hover:bg-[#102B59] text-white text-sm font-bold transition-all duration-300 shadow-[0_4px_18px_rgba(23,78,166,0.25)] hover:shadow-[0_8px_25px_rgba(23,78,166,0.4)] flex items-center gap-2 cursor-pointer focus:outline-none active:scale-95"
-          >
+            className="px-6 py-2.5 rounded-xl bg-[#36BCE5] hover:bg-[#20A6CE] text-[#171B40] text-sm font-bold transition-all duration-300 shadow-[0_4px_18px_rgba(54,188,229,0.35)] hover:shadow-[0_8px_25px_rgba(54,188,229,0.5)] flex items-center gap-2 cursor-pointer focus:outline-none active:scale-95 group hover:-translate-y-0.5">
             <span>Get Consultation</span>
             <ArrowRight className="w-4 h-4" />
           </button>

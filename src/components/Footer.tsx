@@ -24,17 +24,17 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0A1B38] text-slate-300 font-sans border-t border-blue-900/50 relative overflow-hidden">
+    <footer className="bg-[#171B40] text-slate-300 font-sans border-t border-blue-900/50 relative overflow-hidden">
       {/* Subtle Royal & Cyan Lighting Aura */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#174EA6]/20 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#171B40]/20 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#20B8E8]/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       {/* 1. TOP CONTACT STRIP: Rich Midnight Blue (#102B59) */}
-      <div className="bg-[#102B59] py-8 border-b border-blue-800/40 relative z-10">
+      <div className="bg-[#303B63] py-8 border-b border-blue-800/40 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-xl bg-[#174EA6] border border-[#20B8E8]/30 text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
-              <Phone className="w-5 h-5 text-[#20B8E8]" />
+            <div className="w-12 h-12 rounded-xl bg-[#171B40] border border-[#36BCE5]/30 text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <Phone className="w-5 h-5 text-[#36BCE5]" />
             </div>
             <div>
               <p className="text-[11px] text-blue-200 uppercase tracking-widest font-mono font-bold">
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
               </p>
               <a
                 href={`tel:${COMPANY_INFO.primaryPhone}`}
-                className="text-base font-bold text-white hover:text-[#20B8E8] transition-colors"
+                className="text-base font-bold text-white hover:text-[#36BCE5] transition-colors"
               >
                 {COMPANY_INFO.primaryPhone}
               </a>
@@ -50,8 +50,8 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-xl bg-[#174EA6] border border-[#20B8E8]/30 text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
-              <Mail className="w-5 h-5 text-[#20B8E8]" />
+            <div className="w-12 h-12 rounded-xl bg-[#171B40] border border-[#36BCE5]/30 text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <Mail className="w-5 h-5 text-[#36BCE5]" />
             </div>
             <div>
               <p className="text-[11px] text-blue-200 uppercase tracking-widest font-mono font-bold">
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
               </p>
               <a
                 href={`mailto:${COMPANY_INFO.primaryEmail}`}
-                className="text-base font-bold text-white hover:text-[#20B8E8] transition-colors"
+                className="text-base font-bold text-white hover:text-[#36BCE5] transition-colors"
               >
                 {COMPANY_INFO.primaryEmail}
               </a>
@@ -67,8 +67,8 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-xl bg-[#174EA6] border border-[#20B8E8]/30 text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
-              <MapPin className="w-5 h-5 text-[#20B8E8]" />
+            <div className="w-12 h-12 rounded-xl bg-[#171B40] border border-[#36BCE5]/30 text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <MapPin className="w-5 h-5 text-[#36BCE5]" />
             </div>
             <div>
               <p className="text-[11px] text-blue-200 uppercase tracking-widest font-mono font-bold">
@@ -110,17 +110,17 @@ export const Footer: React.FC = () => {
 
             <div className="flex flex-wrap items-center gap-2 pt-2 text-[11px] text-slate-300 font-mono">
               <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-blue-800/40 flex items-center gap-1.5 text-white">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#20B8E8]" /> Enterprise Grade SLA
+                <ShieldCheck className="w-3.5 h-3.5 text-[#36BCE5]" /> Enterprise Grade SLA
               </span>
               <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-blue-800/40 flex items-center gap-1.5 text-white">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#20B8E8]" /> 10+ Years Advisory
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#36BCE5]" /> 10+ Years Advisory
               </span>
             </div>
           </div>
 
           {/* Quick Section Navigation (Col 2) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#20B8E8]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#36BCE5]">
               Homepage
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -185,7 +185,7 @@ export const Footer: React.FC = () => {
 
           {/* Vertical Sectors Catalog (Col 2) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#20B8E8]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#36BCE5]">
               Core Verticals
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
 
           {/* Genuine Verified Contact Info (Col 3) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#20B8E8]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#36BCE5]">
               Verified Contact
             </h4>
             <div className="space-y-3 text-sm text-slate-300">
@@ -219,10 +219,10 @@ export const Footer: React.FC = () => {
               <div className="pt-2">
                 <button
                   onClick={() => scrollToSection('contact-cta')}
-                  className="w-full py-3 px-4 rounded-xl bg-[#174EA6] hover:bg-[#102B59] border border-[#20B8E8]/40 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="w-full py-3 px-4 rounded-xl bg-[#171B40] hover:bg-[#303B63] border border-[#20B8E8]/40 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Connect With Us</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#20B8E8]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#36BCE5]" />
                 </button>
               </div>
             </div>
@@ -237,14 +237,14 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center gap-4 text-xs">
             <span className="flex items-center gap-1.5 text-slate-300">
-              <Lock className="w-3.5 h-3.5 text-[#20B8E8]" /> Enterprise Data Security &amp; ISO Standards
+              <Lock className="w-3.5 h-3.5 text-[#36BCE5]" /> Enterprise Data Security &amp; ISO Standards
             </span>
             <button
               onClick={() => scrollToSection('top')}
-              className="p-2 rounded-lg bg-white/5 hover:bg-[#174EA6] text-white border border-blue-800/40 transition-colors cursor-pointer"
+              className="p-2 rounded-lg bg-white/5 hover:bg-[#171B40] text-white border border-blue-800/40 transition-colors cursor-pointer"
               aria-label="Back to top"
             >
-              <ArrowUp className="w-4 h-4 text-[#20B8E8]" />
+              <ArrowUp className="w-4 h-4 text-[#36BCE5]" />
             </button>
           </div>
         </div>

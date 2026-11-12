@@ -148,7 +148,7 @@ export const ConceptEnterprise: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#020617] text-slate-100 font-sans selection:bg-[#0066FF] selection:text-white overflow-hidden">
+    <div className="bg-[#F8FAFC] text-slate-800 font-sans selection:bg-[#0066FF] selection:text-white overflow-hidden">
       {/* =========================================================================
           SECTION 1 – CINEMATIC 3D HERO (KEN BURNS EFFECT + SAP IT CONSULTING IMAGERY)
           Background: High-end SAP enterprise cloud architecture & digital tech control center
@@ -242,7 +242,7 @@ export const ConceptEnterprise: React.FC = () => {
               {/* Primary 3D Pill: "Speak with our team" */}
               <button
                 onClick={() => scrollToSection('contact-cta')}
-                className="relative group px-8 py-4 rounded-xl bg-gradient-to-r from-[#0052cc] via-[#0066FF] to-[#2563EB] text-white text-base font-bold shadow-[0_8px_28px_rgba(0,102,255,0.45)] hover:shadow-[0_12px_36px_rgba(0,102,255,0.65)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer active:scale-95 overflow-hidden"
+                className="relative group px-8 py-4 rounded-xl bg-gradient-to-r from-[#0052cc] via-[#0066FF] to-[#2563EB] text-white text-base font-bold shadow-[0_8px_28px_rgba(0,102,255,0.45)] hover:shadow-[0_12px_36px_rgba(0,102,255,0.65)] hover:-translate-y-1 transition-all duration-500 ease-out hover:-translate-y-2 flex items-center justify-center gap-3 cursor-pointer active:scale-95 overflow-hidden"
               >
                 <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out"></div>
                 <Zap className="w-5 h-5 fill-white text-white group-hover:scale-110 transition-transform" />
@@ -252,7 +252,7 @@ export const ConceptEnterprise: React.FC = () => {
               {/* Secondary 3D Glass Pill: "Explore Our Services →" */}
               <button
                 onClick={() => scrollToSection('services')}
-                className="px-8 py-4 rounded-xl bg-white/[0.08] hover:bg-white/[0.16] border border-white/25 hover:border-blue-400/60 text-white text-base font-semibold backdrop-blur-xl hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_24px_rgba(0,102,255,0.25)] transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer active:scale-95"
+                className="px-8 py-4 rounded-xl bg-white/[0.08] hover:bg-white/[0.16] border border-white/25 hover:border-blue-400/60 text-white text-base font-semibold backdrop-blur-xl hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_24px_rgba(0,102,255,0.25)] transition-all duration-500 ease-out hover:-translate-y-2 flex items-center justify-center gap-2.5 cursor-pointer active:scale-95"
               >
                 <span>Explore Our Services</span>
                 <ArrowRight className="w-5 h-5 text-slate-200 group-hover:translate-x-1 transition-transform" />
@@ -266,7 +266,7 @@ export const ConceptEnterprise: React.FC = () => {
           SECTION 2 – WHO WE ARE (3D Cards & Enterprise Architecture Photography)
           Background: Deep Blue Velvet [#05112E]
       ========================================================================= */}
-      <section id="about" className="py-28 relative bg-[#05112E] border-t border-blue-900/30 overflow-hidden">
+      <section id="about" className="py-28 relative bg-[#F8FAFC] border-t border-slate-200 overflow-hidden">
         {/* Subtle 3D background grid */}
         <div
           className="absolute inset-0 pointer-events-none opacity-10"
@@ -281,65 +281,62 @@ export const ConceptEnterprise: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Story & Philosophy with Larger Headings */}
             <div className="lg:col-span-7 space-y-7">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 shadow-[0_0_15px_rgba(0,102,255,0.2)]">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 shadow-[0_0_15px_rgba(0,102,255,0.2)]">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#174EA6] font-bold">
                   Who We Are
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl md:text-[46px] font-extrabold text-white tracking-tight font-heading leading-tight drop-shadow-md">
+              <h2 className="text-3xl sm:text-5xl md:text-[46px] font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
                 Technology That Creates Real Business Value.
               </h2>
 
-              <p className="text-lg text-slate-200 leading-relaxed font-normal">
+              <p className="text-lg text-slate-700 leading-relaxed font-normal">
                 ZisanTech Solutions is dedicated to helping businesses embrace digital transformation through intelligent SAP solutions and modern IT services. Our focus is on aligning technology with real business objectives to improve efficiency, visibility, and decision-making.
               </p>
 
-              <p className="text-base text-slate-300 leading-relaxed">
+              <p className="text-base text-slate-600 leading-relaxed">
                 With a strong foundation in SAP consulting and training, we enable organizations to build capable teams while implementing systems that deliver long-term value. Our approach emphasizes clarity, adaptability, and measurable outcomes in every project we undertake.
               </p>
 
               {/* 3D Interactive Feature Cards with Hover Tilt */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-3">
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="p-5 rounded-2xl bg-gradient-to-b from-[#0B1E4B] to-[#040E26] border border-blue-500/30 hover:border-[#0066FF] shadow-[0_10px_25px_rgba(2,11,30,0.5)] hover:shadow-[0_15px_35px_rgba(0,102,255,0.3)] transition-all cursor-default"
+                  initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="p-5 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-[#174EA6] shadow-md hover:shadow-[0_20px_40px_rgba(23,78,166,0.15)] transition-all cursor-default"
                 >
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white mb-3.5 shadow-md shadow-blue-600/30">
                     <ShieldCheck className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-base font-bold text-white font-heading">Process Alignment</h4>
-                  <p className="text-xs text-slate-300 mt-1.5 leading-normal">
+                  <h4 className="text-base font-bold text-slate-900 font-heading">Process Alignment</h4>
+                  <p className="text-xs text-slate-600 mt-1.5 leading-normal">
                     Aligning technology architecture with tangible organizational workflows.
                   </p>
                 </motion.div>
 
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="p-5 rounded-2xl bg-gradient-to-b from-[#0B1E4B] to-[#040E26] border border-blue-500/30 hover:border-[#0066FF] shadow-[0_10px_25px_rgba(2,11,30,0.5)] hover:shadow-[0_15px_35px_rgba(0,102,255,0.3)] transition-all cursor-default"
+                  initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="p-5 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-[#174EA6] shadow-md hover:shadow-[0_20px_40px_rgba(23,78,166,0.15)] transition-all cursor-default"
                 >
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white mb-3.5 shadow-md shadow-blue-600/30">
-                    <Cpu className="w-6 h-6 text-white" />
+                    <Cpu className="w-6 h-6 text-[#171B40] group-hover:text-white" />
                   </div>
-                  <h4 className="text-base font-bold text-white font-heading">Seamless Integration</h4>
-                  <p className="text-xs text-slate-300 mt-1.5 leading-normal">
+                  <h4 className="text-base font-bold text-slate-900 font-heading">Seamless Integration</h4>
+                  <p className="text-xs text-slate-600 mt-1.5 leading-normal">
                     Gate management, weighbridges, e-commerce, banking, and ERP bridges.
                   </p>
                 </motion.div>
 
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="p-5 rounded-2xl bg-gradient-to-b from-[#0B1E4B] to-[#040E26] border border-blue-500/30 hover:border-[#0066FF] shadow-[0_10px_25px_rgba(2,11,30,0.5)] hover:shadow-[0_15px_35px_rgba(0,102,255,0.3)] transition-all cursor-default"
+                  initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="p-5 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-[#174EA6] shadow-md hover:shadow-[0_20px_40px_rgba(23,78,166,0.15)] transition-all cursor-default"
                 >
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white mb-3.5 shadow-md shadow-blue-600/30">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-base font-bold text-white font-heading">Continuous SLA</h4>
-                  <p className="text-xs text-slate-300 mt-1.5 leading-normal">
+                  <h4 className="text-base font-bold text-slate-900 font-heading">Continuous SLA</h4>
+                  <p className="text-xs text-slate-600 mt-1.5 leading-normal">
                     Round-the-clock enterprise support and post-go-live stabilization.
                   </p>
                 </motion.div>
@@ -362,16 +359,16 @@ export const ConceptEnterprise: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05112E] via-transparent to-transparent"></div>
 
                 {/* Floating 3D HUD Badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-[#040E26]/90 backdrop-blur-xl border border-blue-400/30 shadow-2xl">
+                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200 shadow-xl shadow-2xl">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-blue-500/35">
+                    <div className="w-12 h-12 rounded-xl bg-[#171B40] group-hover:bg-[#36BCE5] group-hover:text-[#171B40] transition-colors duration-300 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-blue-500/35">
                       <Zap className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-white font-heading">
+                      <p className="text-sm font-bold text-slate-900 font-heading">
                         Enterprise Execution Standard
                       </p>
-                      <p className="text-xs text-slate-300 mt-0.5">
+                      <p className="text-xs text-slate-600 mt-0.5">
                         Delivering scalable, compliant ERP deployments with certified precision.
                       </p>
                     </div>
@@ -387,21 +384,21 @@ export const ConceptEnterprise: React.FC = () => {
           SECTION 3 – WHAT WE DO / OUR SERVICES (3D Cards with Dynamic Sheen)
           Background: Deep Midnight Navy [#02081C]
       ========================================================================= */}
-      <section id="services" className="py-28 relative bg-[#02081C] border-t border-blue-900/30">
+      <section id="services" className="py-28 relative bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#174EA6] font-bold">
                   What We Do
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-heading">
                 Comprehensive Technology &amp; SAP Solutions.
               </h2>
             </div>
-            <p className="text-base text-slate-300 max-w-md leading-relaxed font-light">
+            <p className="text-base text-slate-600 max-w-md leading-relaxed font-normal">
               From full-scale SAP S/4HANA migrations to cloud microservices and statutory compliance, we empower enterprises with end-to-end capabilities under one roof.
             </p>
           </div>
@@ -415,7 +412,7 @@ export const ConceptEnterprise: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.4 }}
-                className="group relative rounded-2xl bg-gradient-to-b from-[#081944] to-[#030C22] border border-blue-900/60 hover:border-[#0066FF] transition-all duration-300 overflow-hidden shadow-xl hover:shadow-[0_20px_45px_rgba(0,102,255,0.35)] flex flex-col justify-between"
+                className="group relative rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-3 overflow-hidden shadow-md hover:shadow-[0_25px_50px_rgba(54,188,229,0.2)] flex flex-col justify-between"
               >
                 {/* 3D Image Banner */}
                 <div className="relative h-48 overflow-hidden">
@@ -434,17 +431,17 @@ export const ConceptEnterprise: React.FC = () => {
 
                 <div className="p-7 space-y-4 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#38BDF8] transition-colors font-heading">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors font-heading">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-slate-300 leading-relaxed mt-2.5">
+                    <p className="text-sm text-slate-600 leading-relaxed mt-2.5">
                       {service.shortDesc}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-blue-900/40 space-y-2">
+                  <div className="pt-3 border-t border-slate-200 space-y-2">
                     {service.keyFeatures.slice(0, 2).map((feat, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-slate-600">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] mt-1.5 flex-shrink-0"></span>
                         <span className="line-clamp-1">{feat}</span>
                       </div>
@@ -454,7 +451,7 @@ export const ConceptEnterprise: React.FC = () => {
                   <div className="pt-4 flex items-center justify-between">
                     <button
                       onClick={() => scrollToSection('contact-cta')}
-                      className="text-sm font-bold text-[#38BDF8] group-hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="text-sm font-bold text-[#174EA6] group-hover:text-blue-700 font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
@@ -474,19 +471,19 @@ export const ConceptEnterprise: React.FC = () => {
           SECTION 4 – INDUSTRIES WE SERVE (Exactly 6 Large 3D Interactive Cards)
           Background: Deep Electric Cobalt [#040E2C]
       ========================================================================= */}
-      <section id="industries" className="py-28 relative bg-[#040E2C]">
+      <section id="industries" className="py-28 relative bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200">
               <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#174EA6] font-bold">
                 Industry Specializations
               </span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-heading">
               Industries We Serve.
             </h2>
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
               Tailored SAP architectures, batch governance, and real-time operational integration across six core enterprise sectors.
             </p>
           </div>
@@ -502,7 +499,7 @@ export const ConceptEnterprise: React.FC = () => {
                   viewport={{ once: true }}
                   whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="group relative h-[470px] rounded-3xl overflow-hidden border border-blue-900/60 hover:border-[#20B8E8] transition-all duration-500 shadow-2xl hover:shadow-[0_25px_60px_rgba(32,184,232,0.3)] flex flex-col justify-end"
+                  className="group relative h-[470px] rounded-3xl overflow-hidden border border-[#303B63]/60 hover:border-[#36BCE5] transition-all duration-500 ease-out hover:-translate-y-3 shadow-xl hover:shadow-[0_25px_60px_rgba(54,188,229,0.35)] flex flex-col justify-end"
                 >
                   {/* Cinematic Image with Smooth 3D Hover Scale */}
                   <div className="absolute inset-0 overflow-hidden">
@@ -512,7 +509,7 @@ export const ConceptEnterprise: React.FC = () => {
                       className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter brightness-75 contrast-110 group-hover:brightness-90"
                     />
                     {/* Dark gradient vignette for crystal clear readable text */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#091A38] via-[#091A38]/90 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#091A38] via-[#091A38]/95 to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
                   </div>
 
@@ -548,10 +545,10 @@ export const ConceptEnterprise: React.FC = () => {
                     </div>
 
                     <div className="pt-3 border-t border-white/15 flex items-center justify-between">
-                      <span className="text-xs text-slate-300">Tailored Enterprise Architecture</span>
+                      <span className="text-xs font-semibold text-white">Tailored Enterprise Architecture</span>
                       <button
                         onClick={() => scrollToSection('contact-cta')}
-                        className="w-10 h-10 rounded-full bg-[#174EA6] hover:bg-[#20B8E8] hover:text-[#102B59] hover:scale-110 text-white flex items-center justify-center shadow-lg shadow-blue-900/50 transition-all cursor-pointer border border-[#20B8E8]/40"
+                        className="w-10 h-10 rounded-full bg-[#36BCE5] hover:bg-[#20A6CE] text-[#171B40] font-bold hover:scale-110 text-white flex items-center justify-center shadow-lg shadow-blue-900/50 transition-all cursor-pointer border border-[#20B8E8]/40"
                         aria-label={`Explore ${industry.name} solutions`}
                       >
                         <ArrowUpRight className="w-5 h-5" />
@@ -569,49 +566,49 @@ export const ConceptEnterprise: React.FC = () => {
           SECTION 5 – WHY CHOOSE ZISANTECH (3D Glowing Enterprise Pillars)
           Background: Deep Obsidian Sapphire [#020A1F]
       ========================================================================= */}
-      <section id="why-us" className="py-28 relative bg-[#020A1F] border-t border-blue-900/30">
+      <section id="why-us" className="py-28 relative bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#174EA6] font-bold">
                   Why Choose ZisanTech
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight drop-shadow-md">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
                 Business-Centric Technology That Delivers Real Growth.
               </h2>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
                 At ZisanTech Solutions, we combine deep SAP expertise, real-world project delivery, and a thorough understanding of industrial operations to design dependable, future-ready architectures.
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="p-4 rounded-xl bg-white/[0.03] border border-blue-900/40 flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-[#0066FF]/20 flex items-center justify-center text-[#38BDF8] flex-shrink-0 mt-0.5">
+                <div className="p-4 rounded-xl bg-white border border-slate-200 hover:border-[#36BCE5] flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1">
+                  <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-[#36BCE5] flex-shrink-0 mt-0.5">
                     <CheckCircle className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono">
                       Process Optimization First
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-normal">
                       We analyze existing workflows to eliminate friction before writing or configuring any line of code.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/[0.03] border border-blue-900/40 flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-[#0066FF]/20 flex items-center justify-center text-[#38BDF8] flex-shrink-0 mt-0.5">
+                <div className="p-4 rounded-xl bg-white border border-slate-200 hover:border-[#36BCE5] flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1">
+                  <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-[#36BCE5] flex-shrink-0 mt-0.5">
                     <Lock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono">
                       Enterprise Compliance &amp; Security
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-normal">
                       Full statutory compliance for GST, E-Invoice, E-Way Bill, and audited RBAC data governance.
                     </p>
                   </div>
@@ -621,61 +618,61 @@ export const ConceptEnterprise: React.FC = () => {
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <motion.div
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="p-7 rounded-2xl bg-gradient-to-b from-[#081B4B] to-[#040E2A] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 shadow-xl space-y-3.5"
+                initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-3 shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.2)] space-y-3.5 group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
                   <Users className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white font-heading">
+                <h3 className="text-lg font-bold text-slate-900 font-heading">
                   Experienced SAP Consultants
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Certified professionals with live enterprise implementation expertise ensure your initiatives are executed with architectural precision.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="p-7 rounded-2xl bg-gradient-to-b from-[#081B4B] to-[#040E2A] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 shadow-xl space-y-3.5"
+                initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-3 shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.2)] space-y-3.5 group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
                   <Layers className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white font-heading">
+                <h3 className="text-lg font-bold text-slate-900 font-heading">
                   Holistic SAP Services
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   From initial assessment and scope blue-printing to rollout, integration, and continuous 24/7 SLA maintenance.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="p-7 rounded-2xl bg-gradient-to-b from-[#081B4B] to-[#040E2A] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 shadow-xl space-y-3.5"
+                initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-3 shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.2)] space-y-3.5 group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
                   <TrendingUp className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white font-heading">
+                <h3 className="text-lg font-bold text-slate-900 font-heading">
                   Business-Centric Approach
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   We prioritize tangible business metrics—shortening production cycles, automating ledgers, and eliminating data silos.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="p-7 rounded-2xl bg-gradient-to-b from-[#081B4B] to-[#040E2A] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 shadow-xl space-y-3.5"
+                initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-3 shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.2)] space-y-3.5 group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white font-heading">
+                <h3 className="text-lg font-bold text-slate-900 font-heading">
                   Workforce &amp; Training Enablement
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Our training division prepares corporate teams and professionals on live sandbox instances with hands-on scenario learning.
                 </p>
               </motion.div>
@@ -688,19 +685,19 @@ export const ConceptEnterprise: React.FC = () => {
           SECTION 6 – HOW WE WORK / OUR APPROACH (3D Connected Timeline)
           Background: Deep Cobalt Sapphire [#041030]
       ========================================================================= */}
-      <section id="approach" className="py-28 relative bg-[#041030]">
+      <section id="approach" className="py-28 relative bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200">
               <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#174EA6] font-bold">
                 How We Work
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading">
               Our 4-Step Approach.
             </h2>
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
               A disciplined, risk-mitigated delivery lifecycle designed to ensure seamless go-lives and immediate organizational adoption.
             </p>
           </div>
@@ -708,72 +705,72 @@ export const ConceptEnterprise: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div
               whileHover={{ y: -8, scale: 1.02 }}
-              className="p-7 rounded-2xl bg-gradient-to-b from-[#081C4C] to-[#030B1E] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 space-y-4 group shadow-xl"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-2.5 space-y-4 group shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.18)] cursor-default"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                  <Compass className="w-6 h-6 text-white" />
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
+                  <Compass className="w-6 h-6 text-[#171B40] group-hover:text-white" />
                 </div>
-                <span className="font-mono text-2xl font-bold text-white/20 group-hover:text-[#38BDF8] transition-colors">
+                <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-[#36BCE5] transition-colors">
                   01
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Discover</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 font-heading">Discover</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Understanding your business, goals, operational volumes, process gaps, and data readiness.
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -8, scale: 1.02 }}
-              className="p-7 rounded-2xl bg-gradient-to-b from-[#081C4C] to-[#030B1E] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 space-y-4 group shadow-xl"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-2.5 space-y-4 group shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.18)] cursor-default"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                  <BarChart3 className="w-6 h-6 text-white" />
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
+                  <BarChart3 className="w-6 h-6 text-[#171B40] group-hover:text-white" />
                 </div>
-                <span className="font-mono text-2xl font-bold text-white/20 group-hover:text-[#38BDF8] transition-colors">
+                <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-[#36BCE5] transition-colors">
                   02
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Plan</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 font-heading">Plan</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Agreeing on scope, quality standards, SAP architecture blueprints, timelines, and safeguards.
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -8, scale: 1.02 }}
-              className="p-7 rounded-2xl bg-gradient-to-b from-[#081C4C] to-[#030B1E] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 space-y-4 group shadow-xl"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-2.5 space-y-4 group shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.18)] cursor-default"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                  <Cpu className="w-6 h-6 text-white" />
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
+                  <Cpu className="w-6 h-6 text-[#171B40] group-hover:text-white" />
                 </div>
-                <span className="font-mono text-2xl font-bold text-white/20 group-hover:text-[#38BDF8] transition-colors">
+                <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-[#36BCE5] transition-colors">
                   03
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Deliver</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 font-heading">Deliver</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Executing and building with clear communication, regular demos, automated testing, and seamless go-live.
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -8, scale: 1.02 }}
-              className="p-7 rounded-2xl bg-gradient-to-b from-[#081C4C] to-[#030B1E] border border-blue-900/50 hover:border-[#0066FF] transition-all duration-300 space-y-4 group shadow-xl"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#36BCE5] transition-all duration-300 ease-out hover:-translate-y-2.5 space-y-4 group shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.18)] cursor-default"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0052cc] to-[#0066FF] flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                  <TrendingUp className="w-6 h-6 text-white" />
+                <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-200 group-hover:bg-[#36BCE5] p-3 text-[#171B40] group-hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm group-hover:scale-110">
+                  <TrendingUp className="w-6 h-6 text-[#171B40] group-hover:text-white" />
                 </div>
-                <span className="font-mono text-2xl font-bold text-white/20 group-hover:text-[#38BDF8] transition-colors">
+                <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-[#36BCE5] transition-colors">
                   04
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Improve</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 font-heading">Improve</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Reviewing results, continuous 24/7 SLA support, process refinement, and long-term optimization.
               </p>
             </motion.div>
@@ -785,62 +782,62 @@ export const ConceptEnterprise: React.FC = () => {
           SECTION 7 – SAP & TECHNOLOGY EXPERTISE
           Background: Deep Obsidian [#02081C]
       ========================================================================= */}
-      <section id="expertise" className="py-28 relative bg-[#02081C] border-t border-blue-900/30">
+      <section id="expertise" className="py-28 relative bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] shadow-[0_0_8px_#38BDF8]"></span>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#174EA6] font-bold">
                   Technology Stack &amp; Skills
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight drop-shadow-md">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
                 Verified Enterprise SAP &amp; Integration Mastery.
               </h2>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
                 We combine deep functional SAP expertise with modern cloud-native integration standards, enabling seamless communication between shop floor machinery, weighbridges, financial ledgers, and external portals.
               </p>
 
               <div className="space-y-4 pt-2">
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
-                    <span className="text-white font-bold">SAP Consulting &amp; Implementations</span>
-                    <span className="text-[#38BDF8] font-bold">90%</span>
+                    <span className="text-slate-900 font-bold">SAP Consulting &amp; Implementations</span>
+                    <span className="text-[#174EA6] font-bold">90%</span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-[#0052cc] to-[#0066FF] rounded-full w-[90%]"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
-                    <span className="text-white font-bold">System &amp; Hardware Integration (Weighbridge/IoT)</span>
-                    <span className="text-[#38BDF8] font-bold">75%</span>
+                    <span className="text-slate-900 font-bold">System &amp; Hardware Integration (Weighbridge/IoT)</span>
+                    <span className="text-[#174EA6] font-bold">75%</span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-[#0052cc] to-[#0066FF] rounded-full w-[75%]"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
-                    <span className="text-white font-bold">SAP Training Excellence &amp; Sandbox Access</span>
-                    <span className="text-[#38BDF8] font-bold">85%</span>
+                    <span className="text-slate-900 font-bold">SAP Training Excellence &amp; Sandbox Access</span>
+                    <span className="text-[#174EA6] font-bold">85%</span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-[#0052cc] to-[#0066FF] rounded-full w-[85%]"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
-                    <span className="text-white font-bold">Enterprise IT &amp; Statutory Compliance (E-Invoice)</span>
-                    <span className="text-[#38BDF8] font-bold">95%</span>
+                    <span className="text-slate-900 font-bold">Enterprise IT &amp; Statutory Compliance (E-Invoice)</span>
+                    <span className="text-[#174EA6] font-bold">95%</span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-[#0052cc] to-[#0066FF] rounded-full w-[95%]"></div>
                   </div>
                 </div>
@@ -850,20 +847,20 @@ export const ConceptEnterprise: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="p-8 sm:p-9 rounded-3xl bg-gradient-to-b from-[#081B4B] to-[#040E2A] border border-blue-900/50 shadow-2xl space-y-6"
+                className="p-8 sm:p-9 rounded-3xl bg-white border border-slate-200 hover:border-[#36BCE5] shadow-md hover:shadow-[0_20px_45px_rgba(54,188,229,0.15)] transition-all duration-300 space-y-6"
               >
                 <div>
-                  <h3 className="text-xl font-bold text-white font-heading flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-slate-900 font-heading flex items-center gap-2">
                     <GraduationCap className="w-5 h-5 text-[#38BDF8]" />
                     Functional &amp; Technical Module Footprint
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1">
                     Specialized modular expertise deployed across diverse industries.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-mono text-[#38BDF8] uppercase tracking-wider mb-2.5 font-bold">
+                  <p className="text-xs font-mono text-[#171B40] uppercase tracking-wider mb-2.5 font-bold">
                     Core Functional Modules:
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -872,7 +869,7 @@ export const ConceptEnterprise: React.FC = () => {
                         key={mod.id}
                         className="px-3.5 py-1.5 rounded-lg bg-white/[0.05] border border-blue-900/50 text-xs font-medium text-slate-100 select-none hover:border-[#0066FF] transition-colors"
                       >
-                        <strong className="text-[#38BDF8] mr-1">{mod.code}:</strong>
+                        <strong className="text-[#36BCE5] mr-1">{mod.code}:</strong>
                         <span>{mod.title.split(' (')[0]}</span>
                       </span>
                     ))}
@@ -926,8 +923,7 @@ export const ConceptEnterprise: React.FC = () => {
             {clientReviews.map((rev, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -6, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-50px" }} whileHover={{ y: -10, scale: 1.025 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                 className="p-7 rounded-2xl bg-[#F4F8FF] border border-blue-100 hover:border-[#174EA6] transition-all shadow-sm hover:shadow-[0_15px_35px_rgba(23,78,166,0.12)] flex flex-col justify-between"
               >
                 <div className="space-y-4">
@@ -1004,7 +1000,6 @@ export const ConceptEnterprise: React.FC = () => {
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
-                      transition={{ duration: 0.3 }}
                       className="px-6 pb-6 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-50"
                     >
                       {faq.a}
@@ -1020,7 +1015,7 @@ export const ConceptEnterprise: React.FC = () => {
       {/* =========================================================================
           SECTION 10 – CONTACT CTA: Rich Royal Blue Gradient (#102B59 to #174EA6)
       ========================================================================= */}
-      <section id="contact-cta" className="py-28 relative bg-gradient-to-br from-[#102B59] via-[#143B77] to-[#174EA6] text-white">
+      <section id="contact-cta" className="py-28 relative bg-gradient-to-br from-[#171B40] via-[#21295C] to-[#171B40] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
@@ -1031,11 +1026,11 @@ export const ConceptEnterprise: React.FC = () => {
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight drop-shadow-md">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                 Ready To Transform Your Enterprise Systems?
               </h2>
 
-              <p className="text-base sm:text-lg text-blue-100 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-[#F3F5F8] leading-relaxed font-normal">
                 Consult with our senior SAP architects and enterprise technology advisors. We provide comprehensive technical evaluations, scoping roadmaps, and dedicated delivery governance.
               </p>
 
@@ -1180,7 +1175,7 @@ export const ConceptEnterprise: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-xl bg-[#174EA6] hover:bg-[#102B59] text-white text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-900/30 active:scale-95 hover:shadow-[0_10px_30px_rgba(32,184,232,0.35)] border border-[#20B8E8]/40"
+                      className="w-full py-4 rounded-xl bg-[#174EA6] hover:bg-[#102B59] text-white text-sm font-bold uppercase tracking-wider transition-all duration-500 ease-out hover:-translate-y-2 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-900/30 active:scale-95 hover:shadow-[0_10px_30px_rgba(32,184,232,0.35)] border border-[#20B8E8]/40"
                     >
                       <Send className="w-4 h-4 text-[#20B8E8]" />
                       <span>Submit Consultation Request</span>
